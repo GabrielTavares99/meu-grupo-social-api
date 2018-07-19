@@ -38,10 +38,13 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 //	compile('org.springframework.boot:spring-boot-starter-data-rest')
-//	compile('org.springframework.boot:spring-boot-starter-security')
-//	compile('org.springframework.data:spring-data-rest-hal-browser')
-//	testCompile('org.springframework.security:spring-security-test')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    testCompile('org.springframework.security:spring-security-test')
 
+//	compile('org.springframework.data:spring-data-rest-hal-browser')
     compile group: 'joda-time', name: 'joda-time', version: '2.3'
+// https://mvnrepository.com/artifact/org.flywaydb/flyway-core
+    compile group: 'org.flywaydb', name: 'flyway-core', version: '5.1.4'
 
 }
+

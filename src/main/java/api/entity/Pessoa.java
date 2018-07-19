@@ -1,10 +1,10 @@
 package api.entity;
 
 import api.enums.TipoPerfil;
-import com.sun.tools.javac.util.List;
 import org.joda.time.LocalDateTime;
 
 import javax.persistence.*;
+import java.util.List;
 
 public class Pessoa {
 
