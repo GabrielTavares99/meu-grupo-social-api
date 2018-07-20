@@ -1,4 +1,4 @@
-package api.entity;
+package br.com.api.entity;
 
 import org.joda.time.LocalDateTime;
 
@@ -32,7 +32,7 @@ public class Grupo {
         this.nome = nome;
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
+    //    @Temporal(TemporalType.TIMESTAMP) should only be set on a java.util.Date or java.util.Calendar property: br.com.api.entity.Grupo.dataCriacao
     public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
@@ -41,7 +41,7 @@ public class Grupo {
         this.dataCriacao = dataCriacao;
     }
 
-    @OneToMany(mappedBy = "grupo", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "grupos", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Administrador> getAdministradores() {
         return administradores;
     }
@@ -50,7 +50,7 @@ public class Grupo {
         this.administradores = administradores;
     }
 
-    @OneToMany(mappedBy = "grupo", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "grupos", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Integrante> getIntegrantes() {
         return integrantes;
     }

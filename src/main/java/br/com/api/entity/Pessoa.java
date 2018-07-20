@@ -1,11 +1,12 @@
-package api.entity;
+package br.com.api.entity;
 
-import api.enums.TipoPerfil;
+import br.com.api.enums.TipoPerfil;
 import org.joda.time.LocalDateTime;
 
 import javax.persistence.*;
 import java.util.List;
 
+@MappedSuperclass
 public class Pessoa {
 
     private String nome;
@@ -34,7 +35,7 @@ public class Pessoa {
         this.tipoPerfil = tipoPerfil;
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
+    //    @Temporal(TemporalType.TIMESTAMP)
     public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
@@ -76,6 +77,10 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 
