@@ -27,3 +27,8 @@ gradlew.bat
 /dist/
 /nbdist/
 /.nb-gradle/
+
+.classpath
+.project
+WEB-INF/*
+bin/
