@@ -1,4 +1,4 @@
-package br.com.api.entity;
+package br.com.api.entities;
 
 import br.com.api.enums.TipoPerfil;
 import org.joda.time.LocalDateTime;

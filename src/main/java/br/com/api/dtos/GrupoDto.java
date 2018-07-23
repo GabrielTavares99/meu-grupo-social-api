@@ -1,12 +1,14 @@
-package br.com.api.entity;
+package br.com.api.dtos;
 
+import br.com.api.entities.Administrador;
+import br.com.api.entities.Integrante;
+import org.hibernate.validator.constraints.Length;
 import org.joda.time.LocalDateTime;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@Entity
-public class Grupo {
+public class GrupoDto {
 
     private Long id;
     private String nome;
@@ -14,8 +16,11 @@ public class Grupo {
     private List<Administrador> administradores;
     private List<Integrante> integrantes;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    public GrupoDto() {
+
+    }
+
     public Long getId() {
         return id;
     }
@@ -24,6 +29,8 @@ public class Grupo {
         this.id = id;
     }
 
+    @NotNull(message = "Nome não pode ser vázio.")
+    @Length(min = 3, max = 255, message = "Nome deve ser maior igual a 3 e menor igual a 255")
     public String getNome() {
         return nome;
     }
@@ -32,7 +39,6 @@ public class Grupo {
         this.nome = nome;
     }
 
-    //    @Temporal(TemporalType.TIMESTAMP) should only be set on a java.util.Date or java.util.Calendar property: br.com.api.entity.Grupo.dataCriacao
     public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
@@ -41,7 +47,6 @@ public class Grupo {
         this.dataCriacao = dataCriacao;
     }
 
-    @ManyToMany(mappedBy = "grupos", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Administrador> getAdministradores() {
         return administradores;
     }
@@ -50,7 +55,6 @@ public class Grupo {
         this.administradores = administradores;
     }
 
-    @ManyToMany(mappedBy = "grupos", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Integrante> getIntegrantes() {
         return integrantes;
     }
@@ -59,9 +63,5 @@ public class Grupo {
         this.integrantes = integrantes;
     }
 
-    @PrePersist
-    public void prePersist() {
-        dataCriacao = new LocalDateTime();
-    }
 
 }

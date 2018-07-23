@@ -1,6 +1,6 @@
 package br.com.api.repositories;
 
-import br.com.api.entity.Integrante;
+import br.com.api.entities.Integrante;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,6 +1,6 @@
 package br.com.api.repositories;
 
-import br.com.api.entity.Administrador;
+import br.com.api.entities.Administrador;
 import br.com.api.enums.TipoPerfil;
 import br.com.config.MygroupApplication;
 import org.junit.After;

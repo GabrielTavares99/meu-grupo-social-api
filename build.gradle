@@ -36,6 +36,10 @@ dependencies {
 
     providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
     compile('org.springframework.boot:spring-boot-starter-web')
+
+//    HIBERNATE VALIDATOR
+    compile('org.springframework.boot:spring-boot-starter-validation')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile('org.springframework.boot:spring-boot-starter-data-rest')
 

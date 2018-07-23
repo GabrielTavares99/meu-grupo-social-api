@@ -1,6 +1,6 @@
 package br.com.api.repositories;
 
-import br.com.api.entity.Administrador;
+import br.com.api.entities.Administrador;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

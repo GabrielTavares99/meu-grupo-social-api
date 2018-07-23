@@ -1,6 +1,6 @@
 package br.com.api.repositories;
 
-import br.com.api.entity.Grupo;
+import br.com.api.entities.Grupo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /*@NamedQueries({
@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 })*/
 public interface GrupoRepository extends JpaRepository<Grupo, Long> {
 
+
+    Grupo findGrupoByNome(String nome);
 
     /*List<Grupo> findByAdministradorId(@Param("administradorId") Long administradorId);*/
 }

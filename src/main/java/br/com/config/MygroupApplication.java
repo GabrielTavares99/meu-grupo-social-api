@@ -1,6 +1,6 @@
 package br.com.config;
 
-import br.com.api.controller.HomeController;
+import br.com.api.controllers.HomeController;
 import br.com.api.repositories.AdministradorRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
