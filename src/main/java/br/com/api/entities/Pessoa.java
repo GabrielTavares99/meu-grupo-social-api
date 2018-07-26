@@ -11,11 +11,21 @@ public class Pessoa {
 
     private String nome;
     private String email;
+    private String senha;
     private String telefone;
     private Long id;
     private TipoPerfil tipoPerfil;
     private List<Grupo> grupos;
     private LocalDateTime dataCriacao;
+
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     @OneToMany(fetch = FetchType.LAZY)
     public List<Grupo> getGrupos() {

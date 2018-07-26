@@ -15,7 +15,7 @@ public class GrupoService {
     @Autowired
     private GrupoRepository grupoRepository;
 
-    public void cadastrarGrupo(GrupoDto grupoDto, BindingResult result){
+    public void cadastrarGrupo(GrupoDto grupoDto, BindingResult result) {
 
         validarDados(grupoDto, result);
         Grupo grupo = new Grupo();
@@ -24,7 +24,7 @@ public class GrupoService {
         grupoRepository.save(grupo);
     }
 
-        private void validarDados(GrupoDto grupoDto, BindingResult result){
+    private void validarDados(GrupoDto grupoDto, BindingResult result) {
         Grupo empresa = grupoRepository.findGrupoByNome(grupoDto.getNome());
         if (empresa != null)
             result.addError(new ObjectError("nome do grupo", "Nome de grupo já cadastrado"));

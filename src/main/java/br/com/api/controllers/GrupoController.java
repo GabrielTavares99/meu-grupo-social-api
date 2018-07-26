@@ -16,8 +16,6 @@ public class GrupoController {
 
     private static final Logger logger = LoggerFactory.getLogger(GrupoController.class);
 
-
-
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public ResponseEntity<GrupoDto> cadastraGrupo(@Valid @RequestBody GrupoDto grupoDto, BindingResult result) {
 
